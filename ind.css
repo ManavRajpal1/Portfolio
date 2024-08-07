@@ -1,0 +1,47 @@
+/* Existing styles remain the same */
+
+/* Profile Stats Section */
+.profile-stats-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .profile-stats-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Increased gap for better spacing */
+    flex-wrap: wrap;
+  }
+  
+  .profile-stat {
+    background: #fff;
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside each stat box */
+    width: 300px; /* Fixed width for consistency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for depth */
+  }
+  
+  .stats-circles {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .stats-circles canvas {
+    border-radius: 50%; /* Ensure canvas is round */
+    border: 2px solid #ddd; /* Light border for better visibility */
+  }
+  
+  /* Adjust for larger screens */
+  @media (min-width: 768px) {
+    .profile-stat {
+      width: 350px; /* Increased width for larger screens */
+      padding: 30px; /* Increased padding */
+    }
+  
+    .stats-circles {
+      gap: 20px; /* Increased gap for better spacing on larger screens */
+    }
+  }
+  

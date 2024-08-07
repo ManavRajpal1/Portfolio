@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #333;
+    }
+    header {
+      background: #282c34; /* Darker background for header */
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      width: 100%;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    nav a {
+      color: #61dafb; /* Accent color for links */
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #21a1f1; /* Slightly darker hover effect */
+    }
+    .container {
+      display: flex;
+      margin-top: 60px;
+      flex: 1;
+      gap: 2%;
+    }
+    .projects-section, .main-content {
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .projects-section {
+      width: 48%;
+      background: #ffffff; /* Light background for the projects section */
+      border-radius: 0 15px 15px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .main-content {
+      width: 48%;
+      background: #f9f9f9; /* Slightly off-white background for the main content */
+      border-radius: 15px 0 0 15px;
+    }
+    .hero-section {
+      padding: 120px 20px 80px;
+      text-align: center;
+      background: #ffffff; /* White background for hero section */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .hero-content h1 {
+      margin: 0;
+      font-size: 3em;
+      color: #333; /* Dark text color for readability */
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .about-me-image {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      border: 5px solid #61dafb; /* Border color for the image */
+    }
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .project-card {
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #ffffff; /* White background for project cards */
+    }
+    .profile-links, .achievements ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 40px 0;
+    }
+    .profile-link, .achievements li {
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      background: #ffffff; /* White background for profile links and achievements */
+    }
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+      background: #e9ecef; /* Light grey background for contact section */
+      border-radius: 12px;
+    }
+    .contact-section p {
+      max-width: 800px;
+    }
+    .footer {
+      background: #282c34; /* Dark background for footer */
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+      border-radius: 15px 15px 0 0;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
+    }
+    .charts {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .chart-container {
+      width: 200px;
+    }
+    .skills-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .skills-list li {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    #skills {
+      background: #f4f4f4; /* Light grey background for skills section */
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><a href="https://drive.google.com/file/d/1nq8vygRxjK09qtUnyIqXgmoXMNZofZeb/view?usp=sharing" target="_blank">Resume</a></div>
+      <div><a href="#contact">Contact Me</a></div>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div class="projects-section">
+
+
+      <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-card">
+              <h3>Speaker Verification Spoofing Detection (In Progress)</h3>
+              <p>Developing a sophisticated model to detect spoofed voices within speaker verification systems using datasets from the ASVspoof challenges. This project focuses on improving the robustness of speaker verification systems against various spoofing attacks.</p>
+              <p><strong>Technologies Used:</strong> Python, TensorFlow, Scikit-learn</p>
+              <p>The objective is to achieve high detection accuracy and minimize false acceptance and rejection rates, thereby reinforcing the security and reliability of voice authentication systems.</p>
+              <a href="project-one-link.html">View Project (to be updated)</a>
+            </div>
+            
+            <div class="project-card">
+              <h3>Image Super-Resolution</h3>
+              <p>Developed an advanced image super-resolution model to significantly enhance the quality of low-resolution images. Utilized the DIV2K dataset to train the model, leveraging deep learning techniques to upscale images with high fidelity.</p>
+              <p><strong>Technologies Used:</strong> Python, PyTorch, OpenCV</p>
+              <p>Attained a Peak Signal-to-Noise Ratio (PSNR) of 30.5 dB and a Structural Similarity Index (SSIM) score of 0.85. These metrics reflect substantial improvements in image clarity and detail preservation, making the enhanced images suitable for professional applications.</p>
+              <a href="project-two-link.html">View Project</a>
+            </div>
+            
+            <div class="project-card">
+              <h3>Speech Emotion Recognition</h3>
+              <p>Engineered a model to accurately identify emotions from speech recordings using the RAVDESS dataset. This project involved extracting features with Mel-Frequency Cepstral Coefficients (MFCC), training a classification model, and evaluating its performance on emotion recognition tasks.</p>
+              <p><strong>Technologies Used:</strong> Python, TensorFlow, Librosa</p>
+              <p>Achieved an impressive accuracy rate of 82.58%, demonstrating the model's efficacy in distinguishing between different emotional states from speech. This system can be applied to enhance user experience in various applications such as virtual assistants and customer service.</p>
+              <a href="project-three-link.html">View Project</a>
+            </div>
+        </div>
+      </section>
+      <section id="skills" class="section">
+  <h2>Skills</h2>
+  <ul class="skills-list">
+    <li><strong>Programming Languages:</strong> Python, C++</li>
+    <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+    <li><strong>Machine Learning:</strong> Proficient in techniques and algorithms for supervised and unsupervised learning, including regression, classification, and clustering</li>
+    <li><strong>Deep Learning:</strong> Experience with neural networks, convolutional networks, and recurrent networks using frameworks like TensorFlow and PyTorch</li>
+    <li><strong>Frameworks and Libraries:</strong> TensorFlow, Scikit-learn, PyTorch</li>
+    <li><strong>Data Structures and Algorithms (DSA):</strong> Proficient in key algorithms and data structures, including sorting, searching, trees, and graphs</li>
+    <li><strong>Operating Systems (OS):</strong> Knowledgeable in OS concepts such as process management, memory management, and file systems</li>
+    <li><strong>Computer Networks (CN):</strong> Understanding of networking fundamentals, including protocols, network topologies, and security</li>
+    <!-- Add more skills as needed -->
+  </ul>
+</section>
+    </div>
+
+    <div class="main-content">
+      <section id="hero" class="hero-section">
+        <div class="hero-content">
+          <h1>Welcome to My Portfolio</h1>
+          <p>Explore my projects and experience in the field of machine learning.</p>
+        </div>
+      </section>
+
+      <section id="about-me" class="section">
+        <img src="[profile.jpg]" alt="Manav Rajpal" class="about-me-image">
+        <p>Hi, I'm Manav Rajpal, a passionate machine learning enthusiast currently pursuing an M.Tech. at NIT-K Surathkal. I hold a B.E. from S.G.S.I.T.S. Indore.</p>
+        <p>I have a strong foundation in AI and machine learning, with skills in Python, C++, TensorFlow, PyTorch, and Scikit-learn. My projects span various machine learning techniques, including deep learning and model evaluation.</p>
+        <p>I’m eager to explore new advancements and collaborate on innovative projects. Feel free to explore my portfolio and reach out for discussions or collaboration opportunities.</p>
+      </section>
+
+      <section id="profile-stats" class="section">
+        <h2>Profile Stats</h2>
+        <div class="charts">
+          <div class="chart-container">
+            <h3>GeeksforGeeks</h3>
+            <canvas id="gfgChart"></canvas>
+            <a href="https://www.geeksforgeeks.org/user/rajpalmanav1" target="_blank">Visit GFG Profile</a>
+            <p>Total Questions: <span id="totalGFGQuestions"></span></p>
+          </div>
+          <div class="chart-container">
+            <h3>LeetCode</h3>
+            <canvas id="lcChart"></canvas>
+            <a href="https://leetcode.com/rajpalmanav1" target="_blank">Visit LeetCode Profile</a>
+            <p>Total Questions: <span id="totalLCQuestions"></span></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements" class="section achievements">
+        <h2>Achievements</h2>
+        <ul>
+          <li>Achievement One - Description.</li>
+          <li>Achievement Two - Description.</li>
+          <li>Achievement Three - Description.</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div>
+          <h2>Contact Me</h2>
+          <p>If you'd like to get in touch, reach out via email at <a href="mailto:rajpalmanav1@gmail.com">
+            rajpalmanav1@gmail.com</a>.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2024 Manav Rajpal. All rights reserved.</p>
+  </footer>
+
+  <script src="ind.js"></script>
+</body>
+</html>
