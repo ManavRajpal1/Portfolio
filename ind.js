@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const gfgData = {
     labels: ['Easy', 'Medium', 'Hard'], // Labels for the chart segments
     datasets: [{
-      data: [278, 170, 39], // Example data representing the number of questions for each difficulty level
+      data: [282, 184, 41], // Example data representing the number of questions for each difficulty level
       backgroundColor: ['#4caf50', '#ff9800', '#f44336'], // Colors for each segment
       borderWidth: 1 // Border width for the segments
     }]
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const lcData = {
     labels: ['Easy', 'Medium', 'Hard'], // Labels for the chart segments
     datasets: [{
-      data: [158, 165, 37], // Example data representing the number of questions for each difficulty level
+      data: [158, 168, 37], // Example data representing the number of questions for each difficulty level
       backgroundColor: ['#4caf50', '#ff9800', '#f44336'], // Colors for each segment
       borderWidth: 1 // Border width for the segments
     }]
