@@ -1,4 +1,4 @@
-// Navbar Scroll Effect
+// ---------- Navbar Scroll Effect ----------
 window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 50) {
@@ -8,7 +8,7 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Mobile Menu Toggle
+// ---------- Mobile Menu Toggle ----------
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
@@ -26,7 +26,7 @@ mobileMenuBtn.addEventListener('click', function() {
   }
 });
 
-// Smooth Scrolling for Nav Links
+// ---------- Smooth Scrolling for Nav Links ----------
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -50,7 +50,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Scroll Animation for Fade-In Elements
+// ---------- Scroll Animation for Fade-In Elements ----------
 const fadeElements = document.querySelectorAll('.fade-in');
 
 function checkFade() {
@@ -70,7 +70,7 @@ checkFade();
 // Check on scroll
 window.addEventListener('scroll', checkFade);
 
-// Custom Cursor
+// ---------- Custom Cursor ----------
 const cursor = document.querySelector('.custom-cursor');
 const links = document.querySelectorAll('a, button');
 
