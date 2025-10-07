@@ -8,69 +8,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="ind.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
 
-    <!-- Dark Mode Toggle -->
-    <button id="dark-mode-toggle">🌙 Dark Mode</button>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Manav Rajpal</a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#cp" class="nav-link">CP</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="logo">Manav Rajpal</a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#cp" class="nav-link">CP</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <!-- 🌗 Dark/Light Mode Toggle Button -->
+    <div class="dark-mode-toggle-wrapper">
+      <button id="dark-mode-toggle">🌙 Light Mode</button>
+    </div>
+
+    <!-- Mobile menu button (hamburger) -->
+    <button class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Competitive Programmer | Full-Stack Developer</h1>
+                <h1 class="hero-title">Software Developer | Competitive Programming </h1>
                 <p class="hero-subtitle">Top 1% LeetCode, Expert on Codeforces, building scalable and efficient software solutions.</p>
                 <a href="#projects" class="hero-cta">View My Work</a>
             </div>
-        </div>
-        <div class="hero-shapes">
-            <svg width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="none">
-                <circle cx="250" cy="250" r="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-                <circle cx="250" cy="250" r="150" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-                <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-            </svg>
         </div>
     </section>
 
     <!-- About Me Section -->
     <section id="about" class="section fade-in">
         <div class="container">
-            <h2 class="fade-in">About Me</h2>
-            <p class="fade-in">
-                I am Manav Rajpal, a Machine Learning M.Tech graduate from <strong>NIT Surathkal</strong> (CGPA: 7.27) and B.Tech in Information Technology from <strong>S.G.S.I.T.S. Indore</strong> (CGPA: 7.0). 
-                Ranked in the <strong>top 1% on LeetCode</strong> and rated <strong>Expert on Codeforces</strong>, I have strong skills in algorithms, data structures, and problem-solving. 
-                Experienced in <strong>full-stack development</strong> and <strong>object-oriented design</strong>, I focus on building clean, scalable, and efficient software solutions.
+            <h2>About Me</h2>
+            <p>  
+             I am <strong>Manav Rajpal</strong>, an M.Tech graduate in <strong>Machine Learning</strong> from <strong>NIT Surathkal</strong> and a B.Tech in <strong>Information Technology</strong> from <strong>S.G.S.I.T.S. Indore</strong>. 
+             My interests lie at the intersection of <strong>machine learning</strong> and <strong>software engineering</strong>, where I focus on building intelligent, data-driven systems through structured design and efficient implementation.  
+            </p>  
+
+            <p>  
+            Ranked among the <strong>top 1% on LeetCode</strong> and rated <strong>Expert on Codeforces</strong>, I have a strong foundation in <strong>data structures, algorithms,</strong> and <strong>object-oriented design</strong>. 
+            I focus on developing clean, scalable, and high-performance systems that balance innovation with reliability.  
             </p>
+
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section skills">
         <div class="container">
-            <h2 class="fade-in">My Skills</h2>
-            <p class="fade-in">I specialize in full-stack development, machine learning, and problem-solving with clean, scalable code.</p>
-            
+            <h2>My Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card fade-in">
                     <h3><i class="fab fa-python skill-icon"></i> Python</h3>
@@ -79,7 +83,7 @@
                         <div class="skill-level" style="--level: 95;"></div>
                     </div>
                 </div>
-                
+
                 <div class="skill-card fade-in">
                     <h3><i class="fab fa-js skill-icon"></i> JavaScript</h3>
                     <p>Front-end development, DOM manipulation, React/Next.js frameworks.</p>
@@ -87,7 +91,7 @@
                         <div class="skill-level" style="--level: 85;"></div>
                     </div>
                 </div>
-                
+
                 <div class="skill-card fade-in">
                     <h3><i class="fab fa-html5 skill-icon"></i> HTML/CSS</h3>
                     <p>Semantic markup, responsive design, Flexbox, Grid, Bootstrap.</p>
@@ -95,7 +99,7 @@
                         <div class="skill-level" style="--level: 90;"></div>
                     </div>
                 </div>
-                
+
                 <div class="skill-card fade-in">
                     <h3><i class="fab fa-react skill-icon"></i> React/Next.js</h3>
                     <p>Component-based architecture, state management, modern UI development.</p>
@@ -103,7 +107,7 @@
                         <div class="skill-level" style="--level: 85;"></div>
                     </div>
                 </div>
-                
+
                 <div class="skill-card fade-in">
                     <h3><i class="fas fa-database skill-icon"></i> SQL & Firebase</h3>
                     <p>Database design, data storage, and cloud-based solutions.</p>
@@ -111,7 +115,7 @@
                         <div class="skill-level" style="--level: 80;"></div>
                     </div>
                 </div>
-                
+
                 <div class="skill-card fade-in">
                     <h3><i class="fab fa-git-alt skill-icon"></i> Git & Docker</h3>
                     <p>Version control, containerization, and collaborative development workflows.</p>
@@ -126,9 +130,7 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="fade-in">Projects</h2>
-            <p class="fade-in">A selection of my work in software development and machine learning.</p>
-            
+            <h2>Projects</h2>
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="project-image">
@@ -147,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="img2.png" alt="Landslide Detection">
@@ -165,7 +167,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="img3.png" alt="Object Oriented Design">
@@ -187,53 +189,62 @@
         </div>
     </section>
 
-    <!-- Competitive Programming Section -->
-    <section id="cp" class="section profiles">
-        <div class="container">
-            <h2 class="fade-in">Competitive Programming</h2>
-            <p class="fade-in">Coding profiles and achievements in problem-solving and algorithms.</p>
-            
-            <div class="profiles-grid">
-                <div class="profile-card fade-in">
-                    <div class="profile-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3 class="profile-title">LeetCode</h3>
-                        <p>Top 1%, Rating: 2335, 350+ problems solved</p>
-                        <a href="https://leetcode.com/u/2320207/" target="_blank" class="profile-link">View Profile</a>
-                    </div>
-                </div>
-                
-                <div class="profile-card fade-in">
-                    <div class="profile-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3 class="profile-title">Codeforces</h3>
-                        <p>Expert, Rating: 1823</p>
-                        <a href="https://codeforces.com/profile/contests_superhero" target="_blank" class="profile-link">View Profile</a>
-                    </div>
-                </div>
-                
-                <div class="profile-card fade-in">
-                    <div class="profile-icon">
-                        <i class="fab fa-geek"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3 class="profile-title">GeeksforGeeks</h3>
-                        <p>Rating: 1930, 800+ problems solved</p>
-                        <a href="https://auth.geeksforgeeks.org/user/rajpalmanav1/" target="_blank" class="profile-link">View Profile</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- CP --> 
+<section id="cp" class="section">
+  <div class="container">
+    <h2>Competitive Programming</h2>
+
+    <div class="cp-grid">
+      <!-- LeetCode -->
+      <div class="cp-card fade-in">
+        <h3>LeetCode</h3>
+        <ul>
+          <li>Rating: 2335</li>
+          <li>Top 0.5% Globally</li>
+          <li>380+ Problems Solved </li>
+        </ul>
+        <a href="https://leetcode.com/u/2320207" target="_blank" class="cp-link">View Profile</a>
+      </div>
+
+      <!-- Codeforces -->
+      <div class="cp-card fade-in">
+        <h3>Codeforces</h3>
+        <ul>
+          <li>Expert (1823)</li>
+          <li>Active Participant in Contests</li>
+        </ul>
+        <a href="https://codeforces.com/profile/contests_superhero" target="_blank" class="cp-link">View Profile</a>
+      </div>
+
+      <!-- GeeksforGeeks -->
+      <div class="cp-card fade-in">
+        <h3>GeeksforGeeks</h3>
+        <ul>
+            <li>800+ Problems Solved</li>
+            <li>Rating: 1930</li>
+          
+        </ul>
+        <a href="https://auth.geeksforgeeks.org/user/rajpalmanav1" target="_blank" class="cp-link">View Profile</a>
+      </div>
+
+      <!-- CodeChef -->
+      <div class="cp-card fade-in">
+        <h3>CodeChef</h3>
+        <ul>
+          <li>4★ Rating (1986)</li>
+
+        </ul>
+        <a href="https://www.codechef.com/users/rajpalmanav1" target="_blank" class="cp-link">View Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="fade-in">Get in Touch</h2>
+            <h2>Get in Touch</h2>
             <div class="contact-content">
                 <div class="contact-info fade-in">
                     <h3>Contact Info</h3>
