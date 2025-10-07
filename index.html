@@ -1,276 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-      padding: 0;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      color: #333;
-    }
-    header {
-      background: #282c34; /* Darker background for header */
-      color: #fff;
-      padding: 10px 20px;
-      text-align: center;
-      width: 100%;
-      border-radius: 0 0 30px 30px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    nav a {
-      color: #61dafb; /* Accent color for links */
-      text-decoration: none;
-      font-size: 1.2em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #21a1f1; /* Slightly darker hover effect */
-    }
-    .container {
-      display: flex;
-      margin-top: 60px;
-      flex: 1;
-      gap: 2%;
-    }
-    .projects-section, .main-content {
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .projects-section {
-      width: 48%;
-      background: #ffffff; /* Light background for the projects section */
-      border-radius: 0 15px 15px 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .main-content {
-      width: 48%;
-      background: #f9f9f9; /* Slightly off-white background for the main content */
-      border-radius: 15px 0 0 15px;
-    }
-    .hero-section {
-      padding: 120px 20px 80px;
-      text-align: center;
-      background: #ffffff; /* White background for hero section */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .hero-content h1 {
-      margin: 0;
-      font-size: 3em;
-      color: #333; /* Dark text color for readability */
-    }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .about-me-image {
-      border-radius: 50%;
-      width: 180px;
-      height: 180px;
-      border: 5px solid #61dafb; /* Border color for the image */
-    }
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .project-card {
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      background: #ffffff; /* White background for project cards */
-    }
-    .profile-links, .achievements ul {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 0;
-      margin: 40px 0;
-    }
-    .profile-link, .achievements li {
-      border-radius: 12px;
-      padding: 20px;
-      width: 250px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      background: #ffffff; /* White background for profile links and achievements */
-    }
-    .contact-section {
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-      background: #e9ecef; /* Light grey background for contact section */
-      border-radius: 12px;
-    }
-    .contact-section p {
-      max-width: 800px;
-    }
-    .footer {
-      background: #282c34; /* Dark background for footer */
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-      width: 100%;
-      border-radius: 15px 15px 0 0;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
-    }
-    .charts {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .chart-container {
-      width: 200px;
-    }
-    .skills-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    .skills-list li {
-      margin-bottom: 10px;
-      color: #333;
-    }
-    #skills {
-      background: #f4f4f4; /* Light grey background for skills section */
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviral Joshi - Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div><a href="https://drive.google.com/file/d/1nq8vygRxjK09qtUnyIqXgmoXMNZofZeb/view?usp=sharing" target="_blank">Resume</a></div>
-      <div><a href="#contact">Contact Me</a></div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle">🌙 Dark Mode</button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Aviral Joshi</a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#cp" class="nav-link">CP</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
-  
-  <div class="container">
-    <div class="projects-section">
 
-
-      <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-card">
-              <h3>Speaker Verification Spoofing Detection (In Progress)</h3>
-              <p>Developing a sophisticated model to detect spoofed voices within speaker verification systems using datasets from the ASVspoof challenges. This project focuses on improving the robustness of speaker verification systems against various spoofing attacks.</p>
-              <p><strong>Technologies Used:</strong> Python, TensorFlow, Scikit-learn</p>
-              <p>The objective is to achieve high detection accuracy and minimize false acceptance and rejection rates, thereby reinforcing the security and reliability of voice authentication systems.</p>
-              <a href="project-one-link.html">View Project (to be updated)</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Competitive Programmer | Full-Stack Developer</h1>
+                <p class="hero-subtitle">Creating scalable solutions and solving complex problems with clean, efficient code.</p>
+                <a href="#projects" class="hero-cta">View My Work</a>
             </div>
+        </div>
+        <div class="hero-shapes">
+            <svg width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="none">
+                <circle cx="250" cy="250" r="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                <circle cx="250" cy="250" r="150" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="fade-in">My Skills</h2>
+            <p class="fade-in">I specialize in creating scalable, efficient solutions with a focus on clean code and modern design principles.</p>
             
-            <div class="project-card">
-              <h3>Image Super-Resolution</h3>
-              <p>Developed an advanced image super-resolution model to significantly enhance the quality of low-resolution images. Utilized the DIV2K dataset to train the model, leveraging deep learning techniques to upscale images with high fidelity.</p>
-              <p><strong>Technologies Used:</strong> Python, PyTorch, OpenCV</p>
-              <p>Attained a Peak Signal-to-Noise Ratio (PSNR) of 30.5 dB and a Structural Similarity Index (SSIM) score of 0.85. These metrics reflect substantial improvements in image clarity and detail preservation, making the enhanced images suitable for professional applications.</p>
-              <a href="project-two-link.html">View Project</a>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <h3><i class="fab fa-html5 skill-icon"></i> HTML5</h3>
+                    <p>Semantic markup, accessibility best practices, and proper document structure.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="--level: 95;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3><i class="fab fa-css3-alt skill-icon"></i> CSS3</h3>
+                    <p>Advanced animations, responsive design, Flexbox, Grid, and CSS variables.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="--level: 90;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3><i class="fab fa-js skill-icon"></i> JavaScript</h3>
+                    <p>ES6+, DOM manipulation, event handling, and asynchronous programming.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="--level: 85;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3><i class="fab fa-react skill-icon"></i> ReactJS</h3>
+                    <p>Component-based architecture, state management, and modern UI development.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="--level: 85;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3><i class="fab fa-node-js skill-icon"></i> NodeJS</h3>
+                    <p>Server-side JavaScript, API development, and asynchronous programming.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="--level: 75;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3><i class="fab fa-git-alt skill-icon"></i> Git</h3>
+                    <p>Version control, branching strategies, and collaborative development.</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="--level: 85;"></div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="fade-in">Featured Projects</h2>
+            <p class="fade-in">A selection of my recent work showcasing my development skills and creative approach.</p>
             
-            <div class="project-card">
-              <h3>Speech Emotion Recognition</h3>
-              <p>Engineered a model to accurately identify emotions from speech recordings using the RAVDESS dataset. This project involved extracting features with Mel-Frequency Cepstral Coefficients (MFCC), training a classification model, and evaluating its performance on emotion recognition tasks.</p>
-              <p><strong>Technologies Used:</strong> Python, TensorFlow, Librosa</p>
-              <p>Achieved an impressive accuracy rate of 82.58%, demonstrating the model's efficacy in distinguishing between different emotional states from speech. This system can be applied to enhance user experience in various applications such as virtual assistants and customer service.</p>
-              <a href="https://github.com/ManavRajpal1/Speech-Emotion-Recognition">View Project</a>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/300" alt="Urban Synapse">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Urban Synapse</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">ReactJS</span>
+                            <span class="project-tag">NodeJS</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <p>Collaborated with 15+ urban agencies, reducing resource wastage by 25%.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Demo</a>
+                            <a href="#" class="project-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/300" alt="AI-based Grievance Tracking">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-based Grievance Tracking</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">ReactJS</span>
+                            <span class="project-tag">NodeJS</span>
+                            <span class="project-tag">NLP</span>
+                        </div>
+                        <p>Streamlined grievance processing for 10,000+ users monthly.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Demo</a>
+                            <a href="#" class="project-link">Code</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-      </section>
-      <section id="skills" class="section">
-  <h2>Skills</h2>
-  <ul class="skills-list">
-    <li><strong>Programming Languages:</strong> Python, C++</li>
-    <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
-    <li><strong>Machine Learning:</strong> Proficient in techniques and algorithms for supervised and unsupervised learning, including regression, classification, and clustering</li>
-    <li><strong>Deep Learning:</strong> Experience with neural networks, convolutional networks, and recurrent networks using frameworks like TensorFlow and PyTorch</li>
-    <li><strong>Frameworks and Libraries:</strong> TensorFlow, Scikit-learn, PyTorch</li>
-    <li><strong>Data Structures and Algorithms (DSA):</strong> Proficient in key algorithms and data structures, including sorting, searching, trees, and graphs</li>
-    <li><strong>Operating Systems (OS):</strong> Knowledgeable in OS concepts such as process management, memory management, and file systems</li>
-    <li><strong>Computer Networks (CN):</strong> Understanding of networking fundamentals, including protocols, network topologies, and security</li>
-    <!-- Add more skills as needed -->
-  </ul>
-</section>
-    </div>
+    </section>
 
-    <div class="main-content">
-      <section id="hero" class="hero-section">
-        <div class="hero-content">
-          <h1>Welcome to My Portfolio</h1>
-          <p>Explore my projects and experience in the field of machine learning.</p>
+    <!-- Competitive Programming Section -->
+    <section id="cp" class="section profiles">
+        <div class="container">
+            <h2 class="fade-in">Competitive Programming</h2>
+            <p class="fade-in">Check out my coding profiles and achievements in competitive programming.</p>
+            
+            <div class="profiles-grid">
+                <div class="profile-card fade-in">
+                    <div class="profile-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3 class="profile-title">Codeforces</h3>
+                        <p>Max Rating: 1109</p>
+                        <a href="https://codeforces.com/profile/ItsAllMe" target="_blank" class="profile-link">View Profile</a>
+                    </div>
+                </div>
+                
+                <div class="profile-card fade-in">
+                    <div class="profile-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3 class="profile-title">CodeChef</h3>
+                        <p>2⭐ | Rank: 545</p>
+                        <a href="https://www.codechef.com/users/aviral_joshi" target="_blank" class="profile-link">View Profile</a>
+                    </div>
+                </div>
+                
+                <div class="profile-card fade-in">
+                    <div class="profile-icon">
+                        <i class="fab fa-leetcode"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3 class="profile-title">LeetCode</h3>
+                        <p>300+ Problems Solved</p>
+                        <a href="https://leetcode.com/u/aviralaj15/" target="_blank" class="profile-link">View Profile</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="about-me" class="section">
-        <img src="profile.jpg" alt="Manav Rajpal" class="about-me-image">
-        <p>Hi, I'm Manav Rajpal, a passionate machine learning enthusiast currently pursuing an M.Tech. at NIT-K Surathkal. I hold a B.E. from S.G.S.I.T.S. Indore.</p>
-        <p>I have a strong foundation in AI and machine learning, with skills in Python, C++, TensorFlow, PyTorch, and Scikit-learn. My projects span various machine learning techniques, including deep learning and model evaluation.</p>
-        <p>I’m eager to explore new advancements and collaborate on innovative projects. Feel free to explore my portfolio and reach out for discussions or collaboration opportunities.</p>
-      </section>
-
-      <section id="profile-stats" class="section">
-        <h2>Profile Stats</h2>
-        <div class="charts">
-          <div class="chart-container">
-            <h3>GeeksforGeeks</h3>
-            <canvas id="gfgChart"></canvas>
-            <a href="https://www.geeksforgeeks.org/user/rajpalmanav1" target="_blank">Visit GFG Profile</a>
-            <p>Total Questions: <span id="totalGFGQuestions"></span></p>
-          </div>
-          <div class="chart-container">
-            <h3>LeetCode</h3>
-            <canvas id="lcChart"></canvas>
-            <a href="https://leetcode.com/rajpalmanav1" target="_blank">Visit LeetCode Profile</a>
-            <p>Total Questions: <span id="totalLCQuestions"></span></p>
-          </div>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="fade-in">Get In Touch</h2>
+            <p class="fade-in">Have a project in mind or want to discuss a collaboration? I'd love to hear from you.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Let's Connect</h3>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span class="contact-text">itssaj15@gmail.com</span>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fab fa-linkedin contact-icon"></i>
+                        <span class="contact-text"><a href="https://linkedin.com/in/aviral-joshi15">LinkedIn</a></span>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fab fa-github contact-icon"></i>
+                        <span class="contact-text"><a href="https://github.com/Hackeries">GitHub</a></span>
+                    </div>
+                </div>
+                
+                <form class="contact-form fade-in" name="contact" action="post" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" required>
+                        <label for="name" class="form-label">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <label for="email" class="form-label">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" required></textarea>
+                        <label for="message" class="form-label">Your Message</label>
+                    </div>
+                    <div data-netlify-recaptcha="true"></div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="achievements" class="section achievements">
-        <h2>Achievements</h2>
-        <ul>
-          <li>Achievement One - Description.</li>
-          <li>Achievement Two - Description.</li>
-          <li>Achievement Three - Description.</li>
-        </ul>
-      </section>
-
-      <section id="contact" class="contact-section">
-        <div>
-          <h2>Contact Me</h2>
-          <p>If you'd like to get in touch, reach out via email at <a href="mailto:rajpalmanav1@gmail.com">
-            rajpalmanav1@gmail.com</a>.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Hackeries" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/aviral-joshi15" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="copyright">© <span id="current-year"></span> Aviral Joshi. All rights reserved.</p>
         </div>
-      </section>
-    </div>
-  </div>
+    </footer>
 
-  <footer class="footer">
-    <p>&copy; 2024 Manav Rajpal. All rights reserved.</p>
-  </footer>
-
-  <script src="ind.js"></script>
+    <!-- Custom JS -->
+    <script src="scipt.js"></script>
 </body>
 </html>
