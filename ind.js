@@ -1,82 +1,99 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Example data for GeeksforGeeks chart
-  const gfgData = {
-    labels: ['Easy', 'Medium', 'Hard'], // Labels for the chart segments
-    datasets: [{
-      data: [349, 288, 81], // Example data representing the number of questions for each difficulty level
-      backgroundColor: ['#4caf50', '#ff9800', '#f44336'], // Colors for each segment
-      borderWidth: 1 // Border width for the segments
-    }]
-  };
+// Navbar Scroll Effect
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+  } else {
+      navbar.classList.remove('scrolled');
+  }
+});
 
-  // Example data for LeetCode chart
-  const lcData = {
-    labels: ['Easy', 'Medium', 'Hard'], // Labels for the chart segments
-    datasets: [{
-      data: [163, 184, 38], // Example data representing the number of questions for each difficulty level
-      backgroundColor: ['#4caf50', '#ff9800', '#f44336'], // Colors for each segment
-      borderWidth: 1 // Border width for the segments
-    }]
-  };
+// Mobile Menu Toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
-  // Options for GeeksforGeeks chart
-  const gfgOptions = {
-    responsive: true, // Make the chart responsive to window resizing
-    plugins: {
-      legend: {
-        position: 'top', // Position of the legend
-      },
-      tooltip: {
-        callbacks: {
-          label: function(tooltipItem) {
-            // Customize the tooltip label to show the number of questions
-            return `${tooltipItem.label}: ${tooltipItem.raw} questions`;
-          }
-        }
+mobileMenuBtn.addEventListener('click', function() {
+  navLinks.classList.toggle('active');
+  
+  // Toggle menu icon
+  const icon = this.querySelector('i');
+  if (navLinks.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+  } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+  }
+});
+
+// Smooth Scrolling for Nav Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Close mobile menu if open
+      if (navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          const icon = mobileMenuBtn.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
       }
-    }
-  };
-
-  // Options for LeetCode chart
-  const lcOptions = {
-    responsive: true, // Make the chart responsive to window resizing
-    plugins: {
-      legend: {
-        position: 'top', // Position of the legend
-      },
-      tooltip: {
-        callbacks: {
-          label: function(tooltipItem) {
-            // Customize the tooltip label to show the number of questions
-            return `${tooltipItem.label}: ${tooltipItem.raw} questions`;
-          }
-        }
+      
+      const target = document.querySelector(this.getAttribute('href'));
+      
+      if (target) {
+          window.scrollTo({
+              top: target.offsetTop - 70,
+              behavior: 'smooth'
+          });
       }
-    }
-  };
-
-  // Create GeeksforGeeks chart
-  const gfgCtx = document.getElementById('gfgChart').getContext('2d'); // Get the 2D rendering context of the canvas
-  new Chart(gfgCtx, {
-    type: 'doughnut', // Chart type: doughnut
-    data: gfgData, // Data for the chart
-    options: gfgOptions // Options for the chart
   });
+});
 
-  // Create LeetCode chart
-  const lcCtx = document.getElementById('lcChart').getContext('2d'); // Get the 2D rendering context of the canvas
-  new Chart(lcCtx, {
-    type: 'doughnut', // Chart type: doughnut
-    data: lcData, // Data for the chart
-    options: lcOptions // Options for the chart
+// Scroll Animation for Fade-In Elements
+const fadeElements = document.querySelectorAll('.fade-in');
+
+function checkFade() {
+  fadeElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementTop < windowHeight - 100) {
+          element.classList.add('active');
+      }
   });
+}
 
-  // Calculate total number of questions for GeeksforGeeks
-  const totalGFGQuestions = gfgData.datasets[0].data.reduce((a, b) => a + b, 0);
-  // Calculate total number of questions for LeetCode
-  const totalLCQuestions = lcData.datasets[0].data.reduce((a, b) => a + b, 0);
+// Initial check on page load
+checkFade();
 
-  // Update the total questions count on the webpage
-  document.getElementById('totalGFGQuestions').textContent = totalGFGQuestions;
-  document.getElementById('totalLCQuestions').textContent = totalLCQuestions;
+// Check on scroll
+window.addEventListener('scroll', checkFade);
+
+// Custom Cursor
+const cursor = document.querySelector('.custom-cursor');
+const links = document.querySelectorAll('a, button');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+links.forEach(link => {
+  link.addEventListener('mouseenter', () => {
+      cursor.classList.add('hover');
+  });
+  
+  link.addEventListener('mouseleave', () => {
+      cursor.classList.remove('hover');
+  });
+});
+
+// Hide cursor when it leaves the window
+document.addEventListener('mouseleave', () => {
+  cursor.style.display = 'none';
+});
+
+document.addEventListener('mouseenter', () => {
+  cursor.style.display = 'block';
 });
